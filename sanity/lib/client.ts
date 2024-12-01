@@ -1,12 +1,8 @@
-import { createClient } from 'next-sanity'
-
-import { apiVersion, dataset, projectId } from '../env'
+import { createClient } from '@sanity/client'
 
 export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true, // Change to true to use the Content Delivery Network
-  perspective: 'published',
-  stega: false, // Disable stega in development
+  projectId: 's58wcsbp',
+  dataset: 'production',
+  apiVersion: '2024-03-21',
+  useCdn: true
 })

@@ -1,5 +1,5 @@
-import { client } from '@/sanity/lib/client'
-import { urlForImage } from '@/sanity/lib/image'
+import { client } from '../sanity/lib/client'
+import { urlForImage } from '../sanity/lib/image'
 import { Post } from '@/types'
 import Link from 'next/link'
 import { format } from 'date-fns'

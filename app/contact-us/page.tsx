@@ -42,7 +42,7 @@ export default function ContactUs() {
         subject: '',
         message: ''
       });
-    } catch (_error) {
+    } catch {
       setStatus('error');
     }
   };

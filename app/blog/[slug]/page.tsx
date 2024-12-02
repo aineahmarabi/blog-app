@@ -6,6 +6,10 @@ import type { Post } from '@/types'
 import { format } from 'date-fns'
 
 async function getPost(slug: string): Promise<Post> {
+  if (!slug) {
+    throw new Error('Slug is required')
+  }
+
   return await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]{
       _id,

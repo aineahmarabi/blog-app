@@ -2,13 +2,10 @@
 import Link from "next/link"
 import { FaBars } from "react-icons/fa6";
 import { useState, useEffect } from "react";
-import { useSearchParams } from 'next/navigation';
 
 export default function Navbar(){
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const [currentDate, setCurrentDate] = useState("");
-   const searchParams = useSearchParams();
-   const currentCategory = searchParams.get('category');
 
    useEffect(() => {
        const date = new Date();
@@ -28,12 +25,10 @@ export default function Navbar(){
                    <li className="relative group">
                        <Link 
                            href="/?category=Mining" 
-                           className={`hover:text-purple-700 ${currentCategory === 'Mining' ? 'text-purple-700' : ''}`}
+                           className="hover:text-purple-700"
                        >
                            Mining
-                           <span className={`absolute -bottom-1 left-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out ${
-                               currentCategory === 'Mining' ? 'w-full' : 'w-0 group-hover:w-full'
-                           }`}></span>
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                    <li className="relative group">

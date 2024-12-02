@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import { Suspense } from 'react';
-
 import { Montserrat } from 'next/font/google'
 
 const montserrat = Montserrat({
@@ -28,9 +26,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">
-            <Suspense fallback={<div>Loading...</div>}>
-              {children}
-            </Suspense>
+            {children}
           </main>
           <Footer />
         </div>

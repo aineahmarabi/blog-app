@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaHome, FaEnvelope, FaBookOpen } from 'react-icons/fa'
+import { FaHome, FaEnvelope} from 'react-icons/fa'
 
 export default function NotFound() {
   const quickLinks = [

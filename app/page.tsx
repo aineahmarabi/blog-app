@@ -4,9 +4,13 @@ import Link from 'next/link'
 import { format } from 'date-fns'
 import { PostCard } from './components/PostCard'
 
-export default async function Home() {
-  async function getPosts(): Promise<Post[]> {
-    const query = `*[_type == "post"] | order(_createdAt desc) {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { category?: string };
+}) {
+  async function getPosts(categoryParam?: string): Promise<Post[]> {
+    const baseQuery = `*[_type == "post"${categoryParam ? ' && category->title == $category' : ''}] | order(_createdAt desc) {
       _id,
       title,
       slug,
@@ -20,11 +24,10 @@ export default async function Home() {
         title
       }
     }`;
-
-    return client.fetch(query);
+    return client.fetch(baseQuery, categoryParam ? { category: categoryParam } : {});
   }
 
-  const posts = await getPosts();
+  const posts = await getPosts(searchParams.category);
   const [latestPost, ...remainingPosts] = posts;
 
   // Get related posts from the same category as the latest post

@@ -10,7 +10,6 @@ export default function ContactUs() {
     subject: '',
     message: ''
   })
-  const [_error, setError] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

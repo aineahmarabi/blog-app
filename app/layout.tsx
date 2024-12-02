@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={montserrat.className}>
+      <body suppressHydrationWarning={true} className={`${montserrat.className} dark:bg-gray-900`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">

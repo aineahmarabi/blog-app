@@ -18,8 +18,8 @@ export default function Navbar(){
    }, []);
 
    return(
-       <div className="px-4 md:px-10 relative">
-           <div className="hidden md:grid md:grid-cols-3 items-center border-b border-black h-24">
+       <div className="px-4 md:px-10 relative dark:bg-gray-900">
+           <div className="hidden md:grid md:grid-cols-3 items-center border-b border-black dark:border-gray-700 h-24">
                {/* Blog Categories */}
                <ul className="md:flex space-x-10">
                    <li className="relative group">
@@ -66,7 +66,7 @@ export default function Navbar(){
                {/* Centered Title */}
                <div className="text-center">
                    <Link href="/">
-                       <h1 className="text-3xl font-bold text-purple-950 hover:text-purple-800">
+                       <h1 className="text-3xl font-bold text-purple-950 dark:text-purple-200 hover:text-purple-800 dark:hover:text-purple-100">
                            JewelInTheMines
                        </h1>
                    </Link>
@@ -101,7 +101,7 @@ export default function Navbar(){
 
                {/* Centered Title */}
                <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-                   <h1 className="text-2xl font-bold text-purple-700">
+                   <h1 className="text-2xl font-bold text-purple-700 dark:text-purple-200">
                        JewelInTheMines
                    </h1>
                </Link>

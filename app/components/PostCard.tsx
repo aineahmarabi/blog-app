@@ -17,14 +17,14 @@ export const PostCard = ({ post, isLarge = false }: { post: Post, isLarge?: bool
       )}
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
-          <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-700 text-purple-700 dark:text-purple-100 rounded-full text-sm font-medium">
+          <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
             {post.category?.title || 'General'}
           </span>
-          <div className="uppercase tracking-wider text-sm text-gray-600 dark:text-gray-300">
+          <div className="uppercase tracking-wider text-sm text-gray-600">
             {format(new Date(post.publishedAt), 'MMMM d, yyyy')} • {post.author?.name}
           </div>
         </div>
-        <h2 className={`font-bold text-purple-500 group-hover:text-purple-700 dark:text-purple-200 dark:group-hover:text-purple-100 ${isLarge ? 'text-4xl' : 'text-2xl'}`}>
+        <h2 className={`font-bold text-purple-800 group-hover:text-purple-600 ${isLarge ? 'text-4xl' : 'text-2xl'}`}>
           {post.title}
         </h2>
       </div>

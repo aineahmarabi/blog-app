@@ -18,47 +18,62 @@ export default function Navbar(){
    }, []);
 
    return(
-       <div className="px-4 md:px-10 relative dark:bg-gray-900">
-           <div className="hidden md:grid md:grid-cols-3 items-center border-b border-black dark:border-gray-700 h-24">
+       <div className="px-4 md:px-10 relative bg-white">
+           <div className="hidden md:grid md:grid-cols-3 items-center border-b border-black h-24 bg-white">
                {/* Blog Categories */}
                <ul className="md:flex space-x-10">
                    <li className="relative group">
                        <Link 
                            href="/?category=Mining" 
-                           className="hover:text-purple-700"
+                           className="text-purple-800 hover:text-purple-950"
                        >
                            Mining
-                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                    <li className="relative group">
-                       <Link href="/?category=Mentorship" className="hover:text-purple-700">
-                       Mentorship
-                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                       <Link 
+                           href="/?category=Mentorship" 
+                           className="text-purple-800 hover:text-purple-950"
+                       >
+                           Mentorship
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                    <li className="relative group">
-                       <Link href="/?category=Faith" className="hover:text-purple-700">
-                       Faith
-                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                       <Link 
+                           href="/?category=Faith" 
+                           className="text-purple-800 hover:text-purple-950"
+                       >
+                           Faith
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                    <li className="relative group">
-                       <Link href="/?category=Travel" className="hover:text-purple-700">
-                       Travel
-                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                       <Link 
+                           href="/?category=Travel" 
+                           className="text-purple-800 hover:text-purple-950"
+                       >
+                           Travel
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                    <li className="relative group">
-                       <Link href="/?category=Reflections" className="hover:text-purple-700">
-                       Reflections
-                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                       <Link 
+                           href="/?category=Reflections" 
+                           className="text-purple-800 hover:text-purple-950"
+                       >
+                           Reflections
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                    <li className="relative group">
-                       <Link href="/?category=Relationships" className="hover:text-purple-700">
-                       Relationships
-                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                       <Link 
+                           href="/?category=Relationships" 
+                           className="text-purple-800 hover:text-purple-950"
+                       >
+                           Relationships
+                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
                </ul>
@@ -66,7 +81,7 @@ export default function Navbar(){
                {/* Centered Title */}
                <div className="text-center">
                    <Link href="/">
-                       <h1 className="text-3xl font-bold text-purple-950 dark:text-purple-200 hover:text-purple-800 dark:hover:text-purple-100">
+                       <h1 className="text-3xl font-bold text-purple-800 hover:text-purple-950">
                            JewelInTheMines
                        </h1>
                    </Link>
@@ -76,15 +91,15 @@ export default function Navbar(){
                <div className="flex justify-end">
                    <ul className="flex space-x-10">
                        <li className="relative group">
-                           <Link href="/about" className="hover:text-purple-700">
+                           <Link href="/about" className="text-purple-800 hover:text-purple-950">
                                About
-                               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                            </Link>
                        </li>
                        <li className="relative group">
-                           <Link href="/contact-us" className="hover:text-purple-700">
+                           <Link href="/contact-us" className="text-purple-800 hover:text-purple-950">
                                Contact
-                               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-700 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                            </Link>
                        </li>
                    </ul>
@@ -92,25 +107,23 @@ export default function Navbar(){
            </div>
 
            {/* Mobile View */}
-           <div className="md:hidden flex items-center justify-between border-b border-black h-24">
-               {/* Hamburger Menu */}
+           <div className="md:hidden flex items-center justify-between border-b border-black h-24 bg-white">
                <FaBars 
-                   className="cursor-pointer"
+                   className="cursor-pointer text-purple-800"
                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                />
 
-               {/* Centered Title */}
                <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-                   <h1 className="text-2xl font-bold text-purple-700 dark:text-purple-200">
+                   <h1 className="text-2xl font-bold text-purple-800">
                        JewelInTheMines
                    </h1>
                </Link>
            </div>
 
            {/* Date and Author */}
-           <div className="flex justify-between items-center py-2 text-sm text-gray-600">
+           <div className="flex justify-between items-center py-2 text-sm text-gray-600 bg-white">
                <span>{currentDate}</span>
-               <span>By <span className="italic text-purple-700">Imelda Nasubo</span></span>
+               <span>By <span className="italic text-purple-800">Imelda Nasubo</span></span>
            </div>
 
            {/* Mobile Side Menu */}
@@ -122,7 +135,7 @@ export default function Navbar(){
                <div className="p-4">
                    <button 
                        onClick={() => setIsMobileMenuOpen(false)}
-                       className="text-2xl mb-4"
+                       className="text-2xl mb-4 text-purple-800"
                    >
                        &times;
                    </button>
@@ -131,7 +144,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Mining" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                Mining
                            </Link>
@@ -140,7 +153,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Mentorship" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                Mentorship
                            </Link>
@@ -149,7 +162,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Travel" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                Travel
                            </Link>
@@ -158,7 +171,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Faith" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                Faith
                            </Link>
@@ -167,7 +180,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Relationships" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                Relationships
                            </Link>
@@ -176,7 +189,7 @@ export default function Navbar(){
                            <Link 
                                href="/about" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                About
                            </Link>
@@ -185,7 +198,7 @@ export default function Navbar(){
                            <Link 
                                href="/contact-us" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block"
+                               className="block text-purple-800"
                            >
                                Contact
                            </Link>

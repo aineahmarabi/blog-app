@@ -48,46 +48,34 @@ export async function generateStaticParams() {
 
 function BlogPostContent({ post }: { post: Post }) {
   return (
-    <article className="min-h-screen">
+    <article className="min-h-screen bg-white">
       <div className="max-w-3xl mx-auto px-4 py-12">
         <header className="mb-12">
           <div className="flex items-center space-x-4 mb-6">
-            <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-700 text-purple-700 dark:text-purple-100 rounded-full text-sm font-medium">
+            <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
               {post.category?.title || 'General'}
             </span>
-            <div className="uppercase tracking-wider text-sm text-gray-600 dark:text-gray-300">
+            <div className="uppercase tracking-wider text-sm text-gray-600">
               {format(new Date(post.publishedAt), 'MMMM d, yyyy')} • {post.author?.name}
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-950 dark:text-purple-100 mb-8 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mb-8 leading-tight">
             {post.title}
           </h1>
         </header>
 
-        <div className="prose prose-lg max-w-none dark:prose-invert">
+        <div className="prose prose-lg max-w-none">
           <PortableText
             value={post.body}
             components={{
-              types: {
-                image: ({value}) => (
-                  <img
-                    src={urlForImage(value).url()}
-                    alt={value.alt || ' '}
-                    className="my-8 rounded-lg"
-                  />
-                ),
-              },
               block: {
-                normal: ({children}) => <p className="text-lg leading-relaxed tracking-wide text-gray-700 dark:text-gray-200 mb-6 text-justify">{children}</p>,
-                h2: ({children}) => <h2 className="text-3xl font-bold text-purple-950 dark:text-purple-100 mt-12 mb-6">{children}</h2>,
-                h3: ({children}) => <h3 className="text-2xl font-bold text-purple-950 dark:text-purple-100 mt-8 mb-4">{children}</h3>,
+                normal: ({children}) => <p className="text-lg leading-relaxed tracking-wide text-gray-800 mb-6">{children}</p>,
+                h2: ({children}) => <h2 className="text-3xl font-bold text-purple-800 mt-12 mb-6">{children}</h2>,
+                h3: ({children}) => <h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">{children}</h3>,
               },
               list: {
-                bullet: ({children}) => <ul className="list-disc pl-6 mb-6 text-lg text-gray-700 dark:text-gray-200 space-y-2">{children}</ul>,
-                number: ({children}) => <ol className="list-decimal pl-6 mb-6 text-lg text-gray-700 dark:text-gray-200 space-y-2">{children}</ol>,
-              },
-              listItem: {
-                bullet: ({children}) => <li className="leading-relaxed tracking-wide">{children}</li>,
+                bullet: ({children}) => <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-2">{children}</ul>,
+                number: ({children}) => <ol className="list-decimal pl-6 mb-6 text-gray-800 space-y-2">{children}</ol>,
               },
             }}
           />

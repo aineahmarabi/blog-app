@@ -39,6 +39,26 @@ export default async function Home({
       ).slice(0, 3)
     : [];
 
+  if (searchParams.category) {
+    return (
+      <div className="min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+          <div className="mb-16">
+            <h1 className="text-4xl font-bold text-purple-800 mb-4">
+              {searchParams.category} Stories
+            </h1>
+            <div className="w-24 h-1 bg-purple-800"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {posts.map((post) => (
+              <PostCard key={post._id} post={post} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen">
       <div className="flex">

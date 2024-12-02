@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true} className={`${montserrat.className} dark:bg-gray-900`}>
+    <html lang="en" className="light">
+      <body suppressHydrationWarning={true} className={`${montserrat.className} bg-white text-black`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">

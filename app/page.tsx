@@ -67,7 +67,7 @@ export default async function Home({
         <div className="max-w-5xl pl-4 md:pl-10 pt-8">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-purple-950 mb-4">
-              What We're Reading
+              What We&apos;re Reading
             </h1>
             <div className="w-24 h-1 bg-purple-700"></div>
           </div>

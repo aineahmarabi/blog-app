@@ -29,17 +29,17 @@ export default function About() {
                         Mining Engineer & Storyteller
                     </h2>
                     <p className="text-gray-700 leading-relaxed text-lg text-justify">
-                        Welcome to Jewel in the Mines! I'm a passionate mining engineer, saved by grace, 
+                        Welcome to Jewel in the Mines! I&apos;m a passionate mining engineer, saved by grace, 
                         and ready to conquer the depths of the mining industry.
                     </p>
                     <p className="text-gray-700 leading-relaxed text-lg text-justify">
-                        When I'm not working or embarking on new adventures, you'll find me lost in 
-                        the pages of a good novel. There's something magical about immersing myself 
+                        When I&apos;m not working or embarking on new adventures, you&apos;ll find me lost in 
+                        the pages of a good novel. There&apos;s something magical about immersing myself 
                         in stories that adds an extra sparkle to life.
                     </p>
                     <p className="text-gray-700 leading-relaxed text-lg text-justify">
                         As a gemstone enthusiast, I have a special connection to citrine—my birthstone. 
-                        I'm fascinated by how each gemstone carries its own unique beauty, much like 
+                        I&apos;m fascinated by how each gemstone carries its own unique beauty, much like 
                         the stories we all hold within us.
                     </p>
                 </div>

@@ -30,7 +30,6 @@ async function getPost(slug: string): Promise<Post> {
 
 export default async function BlogPost({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug)
-  const currentUrl = `https://jewelinthemines.com/blog/${params.slug}`
 
   return (
     <article className="min-h-screen">

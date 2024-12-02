@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import { FaBars, FaXmark } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation';
 

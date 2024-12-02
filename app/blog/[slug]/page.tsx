@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { client } from '../../../sanity/lib/client'
 import { urlForImage } from '../../../sanity/lib/image'
 import { PortableText } from '@portabletext/react'
@@ -42,9 +42,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug)
-
+function BlogPostContent({ post }: { post: Post }) {
   return (
     <article className="min-h-screen">
       <div className="max-w-3xl mx-auto px-4 py-12">
@@ -76,6 +74,15 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           <PortableText
             value={post.body}
             components={{
+              types: {
+                image: ({value}) => (
+                  <img
+                    src={urlForImage(value).url()}
+                    alt={value.alt || ' '}
+                    className="my-8 rounded-lg"
+                  />
+                ),
+              },
               block: {
                 normal: ({children}) => <p className="text-lg leading-relaxed tracking-wide text-gray-700 mb-6 text-justify">{children}</p>,
                 h2: ({children}) => <h2 className="text-3xl font-bold text-purple-950 mt-12 mb-6">{children}</h2>,
@@ -93,5 +100,15 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         </div>
       </div>
     </article>
+  )
+}
+
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPost(params.slug)
+  
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlogPostContent post={post} />
+    </Suspense>
   )
 } 

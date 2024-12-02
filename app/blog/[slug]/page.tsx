@@ -51,6 +51,15 @@ function BlogPostContent({ post }: { post: Post }) {
     <article className="min-h-screen bg-white">
       <div className="max-w-3xl mx-auto px-4 py-12">
         <header className="mb-12">
+          {post.mainImage && (
+            <div className="relative aspect-[16/9] mb-8">
+              <img
+                src={urlForImage(post.mainImage).url()}
+                alt={post.title}
+                className="object-cover w-full h-full rounded-lg"
+              />
+            </div>
+          )}
           <div className="flex items-center space-x-4 mb-6">
             <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
               {post.category?.title || 'General'}
@@ -68,6 +77,15 @@ function BlogPostContent({ post }: { post: Post }) {
           <PortableText
             value={post.body}
             components={{
+              types: {
+                image: ({value}) => (
+                  <img
+                    src={urlForImage(value).url()}
+                    alt={value.alt || ' '}
+                    className="my-8 rounded-lg"
+                  />
+                ),
+              },
               block: {
                 normal: ({children}) => <p className="text-lg leading-relaxed tracking-wide text-gray-800 mb-6">{children}</p>,
                 h2: ({children}) => <h2 className="text-3xl font-bold text-purple-800 mt-12 mb-6">{children}</h2>,

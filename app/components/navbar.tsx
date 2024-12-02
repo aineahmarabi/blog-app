@@ -135,16 +135,16 @@ export default function Navbar(){
                <div className="p-4">
                    <button 
                        onClick={() => setIsMobileMenuOpen(false)}
-                       className="text-2xl mb-4 text-purple-800"
+                       className="text-3xl mb-6 text-purple-800 hover:text-purple-600"
                    >
                        &times;
                    </button>
-                   <ul className="space-y-4">
+                   <ul className="space-y-6">
                        <li>
                            <Link 
                                href="/?category=Mining" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                Mining
                            </Link>
@@ -153,7 +153,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Mentorship" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                Mentorship
                            </Link>
@@ -162,7 +162,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Travel" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                Travel
                            </Link>
@@ -171,7 +171,7 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Faith" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                Faith
                            </Link>
@@ -180,16 +180,16 @@ export default function Navbar(){
                            <Link 
                                href="/?category=Relationships" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                Relationships
                            </Link>
                        </li>
-                       <li>
+                       <li className="border-t border-gray-200 pt-6">
                            <Link 
                                href="/about" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                About
                            </Link>
@@ -198,7 +198,7 @@ export default function Navbar(){
                            <Link 
                                href="/contact-us" 
                                onClick={() => setIsMobileMenuOpen(false)}
-                               className="block text-purple-800"
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
                            >
                                Contact
                            </Link>

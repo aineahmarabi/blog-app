@@ -28,6 +28,20 @@ async function getPost(slug: string): Promise<Post> {
   )
 }
 
+export async function generateStaticParams() {
+  const posts = await client.fetch(`
+    *[_type == "post"]{
+      slug {
+        current
+      }
+    }
+  `)
+  
+  return posts.map((post: { slug: { current: string } }) => ({
+    slug: post.slug.current,
+  }))
+}
+
 export default async function BlogPost({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug)
 

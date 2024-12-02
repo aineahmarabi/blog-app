@@ -19,9 +19,9 @@ export default function Navbar(){
 
    return(
        <div className="px-4 md:px-10 relative bg-white">
-           <div className="hidden md:grid md:grid-cols-3 items-center border-b border-black h-24 bg-white">
+           <div className="hidden xl:grid xl:grid-cols-3 items-center border-b border-black h-24 bg-white">
                {/* Blog Categories */}
-               <ul className="md:flex space-x-10">
+               <ul className="xl:flex space-x-2 lg:space-x-4 xl:space-x-6 text-sm xl:text-base">
                    <li className="relative group">
                        <Link 
                            href="/?category=Mining" 
@@ -76,12 +76,13 @@ export default function Navbar(){
                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                        </Link>
                    </li>
+                   
                </ul>
 
                {/* Centered Title */}
                <div className="text-center">
                    <Link href="/">
-                       <h1 className="text-3xl font-bold text-purple-800 hover:text-purple-950">
+                       <h1 className="text-xl lg:text-2xl xl:text-3xl font-bold text-purple-800 hover:text-purple-950">
                            JewelInTheMines
                        </h1>
                    </Link>
@@ -89,7 +90,7 @@ export default function Navbar(){
 
                {/* Web Pages */}
                <div className="flex justify-end">
-                   <ul className="flex space-x-10">
+                   <ul className="flex space-x-4 xl:space-x-10 text-sm xl:text-base">
                        <li className="relative group">
                            <Link href="/about" className="text-purple-800 hover:text-purple-950">
                                About
@@ -107,10 +108,13 @@ export default function Navbar(){
            </div>
 
            {/* Mobile View */}
-           <div className="md:hidden flex items-center justify-between border-b border-black h-24 bg-white">
+           <div className="xl:hidden flex items-center justify-between border-b border-black h-24 bg-white relative z-50">
                <FaBars 
-                   className="cursor-pointer text-purple-800"
+                   className="cursor-pointer text-purple-800 text-2xl"
                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                   role="button"
+                   tabIndex={0}
+                   aria-label="Toggle menu"
                />
 
                <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
@@ -128,7 +132,7 @@ export default function Navbar(){
 
            {/* Mobile Side Menu */}
            <div 
-               className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-500 ease-in-out z-50 ${
+               className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-500 ease-in-out z-[60] ${
                    isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
                }`}
            >
@@ -210,7 +214,7 @@ export default function Navbar(){
            {/* Overlay */}
            {isMobileMenuOpen && (
                <div 
-                   className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+                   className="fixed inset-0 bg-black bg-opacity-50 z-[55] transition-opacity duration-300"
                    onClick={() => setIsMobileMenuOpen(false)}
                />
            )}

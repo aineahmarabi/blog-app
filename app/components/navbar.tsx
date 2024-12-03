@@ -19,9 +19,9 @@ export default function Navbar(){
 
    return(
        <div className="px-4 md:px-10 relative bg-white">
-           <div className="hidden xl:grid xl:grid-cols-3 items-center border-b border-black h-24 bg-white">
+           <div className="hidden 2xl:grid 2xl:grid-cols-3 items-center border-b border-black h-24 bg-white">
                {/* Blog Categories */}
-               <ul className="xl:flex space-x-2 lg:space-x-4 xl:space-x-6 text-sm xl:text-base">
+               <ul className="2xl:flex space-x-2 lg:space-x-4 2xl:space-x-6 text-sm 2xl:text-base">
                    <li className="relative group">
                        <Link 
                            href="/?category=Mining" 
@@ -90,7 +90,7 @@ export default function Navbar(){
 
                {/* Web Pages */}
                <div className="flex justify-end">
-                   <ul className="flex space-x-4 xl:space-x-10 text-sm xl:text-base">
+                   <ul className="flex space-x-4 2xl:space-x-10 text-sm 2xl:text-base">
                        <li className="relative group">
                            <Link href="/about" className="text-purple-800 hover:text-purple-950">
                                About
@@ -108,7 +108,7 @@ export default function Navbar(){
            </div>
 
            {/* Mobile View */}
-           <div className="xl:hidden flex items-center justify-between border-b border-black h-24 bg-white relative z-50">
+           <div className="2xl:hidden flex items-center justify-between border-b border-black h-24 bg-white relative z-50">
                <FaBars 
                    className="cursor-pointer text-purple-800 text-2xl"
                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

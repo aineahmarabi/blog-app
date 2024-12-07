@@ -27,7 +27,9 @@ export default async function Home({
     return client.fetch(baseQuery, categoryParam ? { category: categoryParam } : {});
   }
 
-  const posts = await getPosts(searchParams.category);
+  const category = (await searchParams).category;
+  
+  const posts = await getPosts(category);
   const [latestPost, ...remainingPosts] = posts;
 
   // Get related posts from the same category as the latest post
@@ -39,13 +41,13 @@ export default async function Home({
       ).slice(0, 3)
     : [];
 
-  if (searchParams.category) {
+  if (category) {
     return (
       <div className="min-h-screen">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
           <div className="mb-16">
             <h1 className="text-4xl font-bold text-purple-800 mb-4">
-              {searchParams.category} Stories
+              {category} Stories
             </h1>
             <div className="w-24 h-1 bg-purple-800"></div>
           </div>

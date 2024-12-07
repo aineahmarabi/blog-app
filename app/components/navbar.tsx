@@ -3,19 +3,25 @@ import Link from "next/link"
 import { FaBars } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
+// Create a separate client component for the date
+const DateDisplay = () => {
+    const [currentDate, setCurrentDate] = useState<string>('');
+
+    useEffect(() => {
+        const options: Intl.DateTimeFormatOptions = { 
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        const date = new Date();
+        setCurrentDate(date.toLocaleDateString('en-US', options));
+    }, []);
+
+    return <span>{currentDate}</span>;
+};
+
 export default function Navbar(){
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-   const [currentDate, setCurrentDate] = useState("");
-
-   useEffect(() => {
-       const date = new Date();
-       const options: Intl.DateTimeFormatOptions = { 
-           year: 'numeric' as const,
-           month: 'long' as const,
-           day: 'numeric' as const
-       };
-       setCurrentDate(date.toLocaleDateString('en-US', options));
-   }, []);
 
    return(
        <div className="px-4 md:px-10 relative bg-white">
@@ -124,9 +130,8 @@ export default function Navbar(){
                </Link>
            </div>
 
-           {/* Date and Author */}
-           <div className="flex justify-between items-center py-2 text-sm text-gray-600 bg-white">
-               <span>{currentDate}</span>
+           {/* Author only */}
+           <div className="flex justify-end items-center py-2 text-sm text-gray-600 bg-white">
                <span>By <span className="italic text-purple-800">Imelda Nasubo</span></span>
            </div>
 

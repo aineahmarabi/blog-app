@@ -104,11 +104,12 @@ function BlogPostContent({ post }: { post: Post }) {
 }
 
 export default async function BlogPost({
-  params,
+  params = Promise.resolve({ slug: '' })
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const post = await getPost(params.slug);
+  const paramsData = await params;
+  const post = await getPost(paramsData.slug);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

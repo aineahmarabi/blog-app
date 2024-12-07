@@ -106,8 +106,7 @@ function BlogPostContent({ post }: { post: Post }) {
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: { slug: string }
 }) {
   const post = await getPost(params.slug);
 

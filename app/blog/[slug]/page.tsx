@@ -103,6 +103,7 @@ function BlogPostContent({ post }: { post: Post }) {
   )
 }
 
+// @ts-ignore
 export default async function BlogPost({
   params,
 }: {

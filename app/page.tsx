@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { format } from 'date-fns'
 import { PostCard } from './components/PostCard'
 
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
 export default async function Home({
-  searchParams,
-}: {
-  searchParams: { category?: string };
-}) {
+  searchParams = Promise.resolve({})
+}: Props) {
   async function getPosts(categoryParam?: string): Promise<Post[]> {
     const baseQuery = `*[_type == "post"${categoryParam ? ' && category->title == $category' : ''}] | order(_createdAt desc) {
       _id,
@@ -27,7 +29,11 @@ export default async function Home({
     return client.fetch(baseQuery, categoryParam ? { category: categoryParam } : {});
   }
 
-  const category = (await searchParams).category;
+  const searchParamsData = await searchParams;
+  
+  const category = Array.isArray(searchParamsData.category) 
+    ? searchParamsData.category[0] 
+    : searchParamsData.category;
   
   const posts = await getPosts(category);
   const [latestPost, ...remainingPosts] = posts;

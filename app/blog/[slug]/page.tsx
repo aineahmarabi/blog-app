@@ -65,7 +65,7 @@ function BlogPostContent({ post }: { post: Post }) {
               {post.category?.title || 'General'}
             </span>
             <div className="uppercase tracking-wider text-sm text-gray-600">
-              {format(new Date(post.publishedAt), 'MMMM d, yyyy')} • {post.author?.name}
+              {format(new Date(post.publishedAt), 'MMMM d, yyyy', { weekStartsOn: 1 })} • {post.author?.name}
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mb-8 leading-tight">

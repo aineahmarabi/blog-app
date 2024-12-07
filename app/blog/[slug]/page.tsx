@@ -108,8 +108,7 @@ export default async function BlogPost({
 }: { 
   params: { slug: string } 
 }) {
-  const slug = (await params).slug;
-  const post = await getPost(slug);
+  const post = await getPost(params.slug);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

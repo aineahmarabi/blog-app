@@ -1,24 +1,7 @@
 'use client'
 import Link from "next/link"
 import { FaBars } from "react-icons/fa6";
-import { useState, useEffect } from "react";
-
-// Create a separate client component for the date
-const DateDisplay = () => {
-    const [currentDate, setCurrentDate] = useState<string>('');
-
-    useEffect(() => {
-        const options: Intl.DateTimeFormatOptions = { 
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        };
-        const date = new Date();
-        setCurrentDate(date.toLocaleDateString('en-US', options));
-    }, []);
-
-    return <span>{currentDate}</span>;
-};
+import { useState } from "react";
 
 export default function Navbar(){
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

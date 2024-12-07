@@ -103,10 +103,11 @@ function BlogPostContent({ post }: { post: Post }) {
   )
 }
 
-export default async function BlogPost({ 
-  params 
-}: { 
-  params: { slug: string } 
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const post = await getPost(params.slug);
 

@@ -23,7 +23,9 @@ export default function Footer() {
                 </a>
             </div>
             <div className="text-center text-white text-sm mt-6">
-                <p>© 2024 Jewel in the Mines. All rights reserved.</p>
+                <p>© 2024 Jewel in the Mines. Developed by <strong className='text-black'>
+                    <a href="https://marabi.tech" target="_blank" rel="noopener noreferrer">Aineah Marabi</a>
+                </strong></p>
             </div>
         </div>
     );

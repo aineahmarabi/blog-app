@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata } from 'next'
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
@@ -11,9 +11,30 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "JewelInTheMines",
-  description: "JewelInTheMines explores hidden gems and untold stories from unexpected places, shining a light on beauty, resilience, and inspiration in life's overlooked corners.",
-};
+  title: {
+    default: 'Jewel in the Mines',
+    template: '%s | Jewel in the Mines'
+  },
+  description: 'Discover insights and stories about mining, precious stones, and mineral exploration',
+  keywords: ['mining', 'jewels', 'precious stones', 'mineral exploration', 'gems', 'mining industry'],
+  robots: {
+    index: true,
+    follow: true
+  },
+  openGraph: {
+    title: 'Jewel in the Mines',
+    description: 'Discover insights and stories about mining, precious stones, and mineral exploration',
+    url: 'https://your-domain.com',
+    siteName: 'Jewel in the Mines',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jewel in the Mines',
+    description: 'Discover insights and stories about mining, precious stones, and mineral exploration',
+  }
+}
 
 export default function RootLayout({
   children,
@@ -22,6 +43,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light">
+      <head>
+        <link 
+          rel="canonical" 
+          href={`https://your-domain.com${window.location.pathname}`} 
+        />
+      </head>
       <body suppressHydrationWarning={true} className={`${montserrat.className} bg-white text-black`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />

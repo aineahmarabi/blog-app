@@ -177,6 +177,15 @@ export default function Navbar(){
                                Relationships
                            </Link>
                        </li>
+                     <li>
+                           <Link 
+                               href="/?category=Reflections" 
+                               onClick={() => setIsMobileMenuOpen(false)}
+                               className="block text-purple-800 hover:text-purple-600 font-medium"
+                           >
+                               Reflections
+                           </Link>
+                       </li>
                        <li className="border-t border-gray-200 pt-6">
                            <Link 
                                href="/about" 
